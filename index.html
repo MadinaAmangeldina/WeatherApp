@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/headIcon.png" type="image/x-icon"/>
+  <title>City Weather</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="day" class="night" class="morning" class="evening">
+
+  <div class="header">
+
+    <h1 id="mainHeader">DAILY WEATHER</h1>
+
+  </div>
+
+  <div class="card">
+    <div class="inputBox">
+      <input type="text" required="required"
+      id="city" name="City">
+      <span>Enter city or town</span>
+      <button id="btn"><img src="images/search.png" height="20px"></button>
+    </div>
+
+    <div class="error">
+      <p>Invalid city name</p>
+    </div>
+
+    <div class="weather">
+      <div class="mainContainer">
+        <div class="container" id="container1">
+
+          <div class="details1">
+  
+            <div class="col">
+              <img src="images/humidity.png">
+              <div>
+                <p class="humidity">50%</p>
+                <p>Humidity</p>
+              </div>
+            </div>
+  
+            <div class="col">
+              <img src="images/wind.png">
+              <div>
+                <p class="wind">15km/h</p>
+                <p>Wind Speed</p>
+              </div>
+            </div>
+  
+            <div class="col">
+              <img src="images/sunrise.png">
+              <div>
+                <p class="sunrise">6:00</p>
+                <p>Sunrise</p>
+              </div>
+            </div>
+  
+            <div class="col">
+              <img src="images/sunset.png">
+              <div>
+                <p class="sunset">20:00</p>
+                <p>Sunset</p>
+              </div>            
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="container" class="container2">
+          <img class="weather-icon" src="images/rain.png">
+          <h1 class="temp">12°C</h1>
+          <h2 class="city">London</h2>
+        </div>
+  
+        <div class="container" id="container3">
+  
+          <div class="details2">
+  
+            <div class="col">
+              <img src="images/minTemp.png">
+              <div>
+                <p class="mintemp">0°C</p>
+                <p>Min</p>                
+              </div>            
+            </div>
+    
+            <div class="col">
+              <img src="images/maxTemp.png">
+              <div>
+                <p class="maxtemp">40°C</p>
+                <p>Max</p> 
+              </div>            
+            </div>
+    
+            <div class="col">
+              <img src="images/feelsLike.png">
+              <div>
+                <p class="feelslike">15°C</p>
+                <p>Feels like</p>
+              </div>            
+            </div>
+    
+            <div class="col">
+              <div>
+                <p class="mainmessage">"<span class="message">Don't forget an umbrella!</span>"</p>
+              </div>            
+            </div>
+  
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <div>
+
+  </div>
+  
+</body>
+</html>
