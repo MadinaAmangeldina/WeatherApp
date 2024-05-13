@@ -34,8 +34,9 @@ async function getData(city) {
     const error = document.querySelector(".error");
 
     function change_background() {
-      const date = new Date(data.timezone);
+      const date = new Date((data.dt + data.timezone) *1000);
       const hour = date.getHours();
+      console.log(date);
       console.log(hour);
       if (hour <= 20 && hour > 9) {
         document.body.className = "day";
