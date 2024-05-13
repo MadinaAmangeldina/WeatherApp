@@ -2,11 +2,11 @@ function change_background() {
   const date = new Date();
   const hour = date.getHours();
   console.log(hour);
-  if (hour <= 20 & hour > 9) {
+  if (hour <= 20 && hour > 9) {
     document.body.className = "day";
   } else if (hour > 20 || hour < 5) {
      document.body.className = "night";
-  } else if (hour >= 5 & hour <= 9) {
+  } else if (hour >= 5 && hour <= 9) {
     document.body.className = "morning";
     document.querySelector(".header").style.color = "rgb(111, 107, 107)";
     // document.getElementsByClassName(".container").style.backgroundColor = "rgb(111, 107, 107)";
@@ -32,6 +32,27 @@ async function getData(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)           // fetching api information
     const data = await response.json();
     const error = document.querySelector(".error");
+
+    function change_background() {
+      const date = new Date(data.timezone);
+      const hour = date.getHours();
+      console.log(hour);
+      if (hour <= 20 && hour > 9) {
+        document.body.className = "day";
+      } else if (hour > 20 || hour < 5) {
+         document.body.className = "night";
+      } else if (hour >= 5 && hour <= 9) {
+        document.body.className = "morning";
+        document.querySelector(".header").style.color = "rgb(111, 107, 107)";
+        // document.getElementsByClassName(".container").style.backgroundColor = "rgb(111, 107, 107)";
+      } else {
+        document.body.className = "evening";
+      }
+    }
+
+    change_background();
+    setInterval(change_background, 1000 * 60 * 60);
+
 
     if (response.status === 200) {
       console.log(data);
@@ -132,3 +153,4 @@ searchBox.addEventListener('keypress', (e)=> {
   getData(searchBox.value);
   };
 } )
+
